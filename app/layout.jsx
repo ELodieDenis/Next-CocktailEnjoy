@@ -4,20 +4,14 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
-
-export const metadata = {
-  title: "Cocktail Enjoy",
-  description: "Prestations barman, professionel et particulier, pour des événements sur mesure.",
-  icons: {
-    icon: "/assets/Logo.webp"
-  }
-};
 
 export default function RootLayout({ children }) {
   return (
