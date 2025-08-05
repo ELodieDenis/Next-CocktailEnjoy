@@ -12,10 +12,8 @@ const Navbar = () => {
     useEffect(() => {
         const handleResize = () => {
             if(document.documentElement.clientWidth >= 1024) {
-                console.log("trop petit")
                 setIsMenuOpen(false)
             }
-            console.log(document.documentElement.clientWidth)
         }
 
         handleResize()
@@ -34,7 +32,7 @@ const Navbar = () => {
           />
         </a>
 
-        <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[6.75rem] right-0 p-10 z-20 bg-zinc-900 w-full max-w-xs shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">
+        <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[6.75rem] right-0 p-6 z-200 bg-zinc-900 w-full max-w-[250px] shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">
             <ul className={`flex ${isMenuOpen ? "flex-col gap-6" : "flex-row gap-10"}`}>
                 {["Accueil", "Prestations", "Créations", "À propos", "Contact"].map((item) => (
                     <li key={item}>

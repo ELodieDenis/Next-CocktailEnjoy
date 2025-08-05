@@ -1,4 +1,6 @@
 import Navbar from "@/src/components/Navbar";
+import HeroSection from "@/src/components/HeroSection";
+import WhoAreYou from "@/src/components/WhoAreYou";
 
 export const metadata = {
   title: "Cocktail Enjoy - Barman à domicile en Charente-Maritime",
@@ -12,6 +14,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <HeroSection />
+      <WhoAreYou />
     </>
   );
 }
