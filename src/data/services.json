@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Évènements privés",
+        "subtitle": "Offrez à vos invités une expérience cocktail unique, directement chez vous ou sur le lieu de votre fête.",
+        "image": "/assets/ServicesBarman/EvePrive.webp",
+        "seeMore": "Voir plus"
+    },
+        {
+        "title": "Évènements d'entreprises",
+        "subtitle": "Marquez vos soirées professionnelles avec un bar sur mesure et des créations qui impressionnent vos équipes et clients.",
+        "image": "/assets/ServicesBarman/EveEntreprise.webp",
+        "seeMore": "Voir plus"
+    },
+        {
+        "title": "Ateliers mixologie",
+        "subtitle": "Initiez-vous à l’art du cocktail dans une ambiance conviviale et interactive.",
+        "image": "/assets/ServicesBarman/AtelierMixo.webp",
+        "seeMore": "Voir plus"
+    }
+]
