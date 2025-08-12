@@ -13,7 +13,7 @@ const Services = () => {
                     <div>
                         <div className='flex flex-col w-full object-cover gap-5'>
                             {services.map((service, index) => (
-                                <div key={index} className='flex flex-row bg-white rounded-2xl'>
+                                <div key={index} className='overflow-hidden flex flex-row bg-white rounded-2xl'>
                                     <div>
                                         <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' width={400} height={180} style={{ display: "block" }}/>
                                     </div>
