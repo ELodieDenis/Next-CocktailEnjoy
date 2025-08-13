@@ -14,6 +14,13 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <head>
+        <meta
+          name="description"
+          content="Prestations barman, professionnel et particulier, pour tous vos événements."
+        />
+      </head>
+      
       <div className="bg-zinc-100">
           <Navbar />
           <HeroSection />

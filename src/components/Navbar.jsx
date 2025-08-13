@@ -48,7 +48,7 @@ const Navbar = () => {
         <BtnReservation className="hidden lg:flex" />
 
         <button onClick={toggleMenu} className="lg:hidden focus:outline-none" aria-label="Ouvrir ou fermer le menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu">
-            <img src="/icons/icon_menu.svg" alt="Icône menu" className="w-6 h-6" width="24" height="24"/>
+            <img src="/icons/icon_menu.svg" alt="Icône menu" className="w-6 h-6 hover:cursor-pointer" width="24" height="24"/>
         </button>
       </div>
     </header>

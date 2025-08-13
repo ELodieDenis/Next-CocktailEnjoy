@@ -4,9 +4,9 @@ import React from 'react';
 import BtnReservation from './BtnReservation';
 import imageBar from '@/public/assets/Bar.webp';
 import Image from 'next/image';
-import imgCocktailBlue from "@/public/assets/ImgHeroSection/CocktailBlue.jpg"
-import imgCocktailYellow from "@/public/assets/ImgHeroSection/CocktailYellow.jpg"
-import imgCocktailRed from "@/public/assets/ImgHeroSection/CocktailRed.jpg"
+import imgCocktailBlue from "@/public/assets/ImgHeroSection/CocktailBlue.webp"
+import imgCocktailYellow from "@/public/assets/ImgHeroSection/CocktailYellow.webp"
+import imgCocktailRed from "@/public/assets/ImgHeroSection/CocktailRed.webp"
 import { useRef, useEffect } from 'react';
 
 const HeroSection = () => {
