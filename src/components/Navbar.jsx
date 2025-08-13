@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import BtnReservation from "./BtnReservation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,8 +29,7 @@ const Navbar = () => {
     <header ref={refHeader} className="bg-zinc-900 relative">
       <div className="flex items-center justify-between px-20 py-3 w-full">
         <a href="/" aria-label="Page d'accueil Cocktail Enjoy">
-          <img src="/assets/Logo.webp" alt="Logo de l'entreprise Cocktail Enjoy" className="w-[160px] h-[85px]" loading="eager" fetchPriority="high" width="160"height="85"
-          />
+          <Image src="/assets/Logo.webp" alt="Logo de l'entreprise Cocktail Enjoy" className="w-[100px] h-[50px]"  priority width={100} height={50}/>
         </a>
 
         <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[6.75rem] right-0 p-6 z-200 bg-zinc-900 w-full max-w-[250px] shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">

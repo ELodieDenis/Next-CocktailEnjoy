@@ -16,7 +16,7 @@ const WhoAreYou = () => {
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, accusamus temporibus. Illum reiciendis culpa minus quia quaerat. Earum in ex dolores velit dolore quo suscipit expedita sed consectetur, doloribus eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore dolor ab vero officiis dolorem, ipsum, cumque molestias alias tempora neque blanditiis dolores, delectus ea necessitatibus consequuntur ut veritatis. Blanditiis, nulla.</p>
                             </div>
                             <div className='flex md:justify-end md:w-1/4 justify-center'>
-                                <Image src={PhotoFace} alt='Photo du barman professionnel - Benjamin Denis' />
+                                <Image src={PhotoFace} alt='Photo du barman professionnel - Benjamin Denis' loading='lazy'/>
                             </div>
                         </div>
                         <div className='flex w-full justify-center'>
