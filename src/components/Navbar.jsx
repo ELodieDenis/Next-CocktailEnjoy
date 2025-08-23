@@ -32,11 +32,11 @@ const Navbar = () => {
           <Image src="/assets/Logo.webp" alt="Logo de l'entreprise Cocktail Enjoy" className="w-[100px] h-[50px]"  priority width={100} height={50}/>
         </a>
 
-        <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[6.75rem] right-0 p-6 z-200 bg-zinc-900 w-full max-w-[250px] shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">
+        <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[4.5rem] right-0 p-6 z-200 bg-zinc-900 w-full max-w-[250px] shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">
             <ul className={`flex ${isMenuOpen ? "flex-col gap-6" : "flex-row gap-10"}`}>
                 {["Accueil", "Prestations", "Créations", "À propos", "Contact"].map((item) => (
                     <li key={item}>
-                        <a href={`#${item.toLowerCase()}`} className="text-amber-50 hover:text-amber-300 transition-transform transform hover:scale-[1.03]">
+                        <a href={`#${item.toLowerCase()}`} className="text-amber-50 hover:text-amber-300 transition-transform transform hover:scale-105">
                             {item}
                         </a>
                     </li>
