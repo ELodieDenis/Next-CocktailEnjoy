@@ -6,7 +6,7 @@ const WhoAreYou = () => {
     return (
         <>
             <div className='w-full text-white'>
-                <div className='flex flex-col md:flex-row max-w-[1250px] mx-auto px-10 py-15 justify-between'>
+                <div className='flex flex-col md:flex-row max-w-[1250px] mx-auto py-15 justify-between px-10'>
                     <div className='flex flex-col gap-5'>
                         <div>
                             <h2 className='text-3xl font-semibold'>Qui sommes-nous ?</h2>
@@ -21,7 +21,7 @@ const WhoAreYou = () => {
                         </div>
                         <div className='flex w-full justify-center'>
                             <a href="#reservation" aria-label='Page de réservation'>
-                                <button className="flex items-center justify-center  rounded-4xl h-10 p-6 text-zinc-900 bg-amber-400 hover:cursor-pointer hover:scale-105 text-2xl hover:shadow-amber-400 hover:shadow-2xl">A propos</button>
+                                <button className="flex items-center justify-center transform transition-all ease-in-out duration-300 rounded-4xl h-10 p-6 text-white border border-white hover:cursor-pointer hover:scale-105 text-2xl hover:shadow-amber-400 hover:shadow-2xl hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900">A propos</button>
                             </a>
                         </div>
                     </div>

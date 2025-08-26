@@ -23,7 +23,7 @@ const Services = () => {
                                             <p>{service.subtitle}</p>
                                         </div> 
                                         <div className='flex justify-center w-full'>
-                                            <button className='rounded-4xl px-10 py-1 font-semibold bg-amber-400 hover:cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-amber-400 text-zinc-900'>{service.seeMore}</button>
+                                            <button className='rounded-4xl px-10 py-1 font-semibold text-white border border-white transform transition-all ease-in-out duration-300 hover:bg-amber-400 hover:text-zinc-900 hover:border-amber-400 hover:cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-amber-400'>{service.seeMore}</button>
                                         </div>
                                     </div> 
                                 </div>

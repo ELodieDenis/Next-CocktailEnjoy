@@ -1,33 +1,47 @@
 import React from 'react';
 import cocktails from "../data/cocktails.json"
 import Image from 'next/image';
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Cocktails = () => {
+
+
     return (
         <div className='text-white'>
-            <div className=''>
-                <div className='flex max-w-[1250px] m-auto text-3xl font-semibold py-5'>
+            <div className='max-w-[1250px] mx-auto px-10 h-auto'>
+                <div className='flex text-3xl font-semibold py-5'>
                     <h2>Créations cocktails</h2>
                 </div>
-                <div className='flex w-full justify-center'>
-                    <div className='max-w-[1250px] flex gap-15'>
+
+                <div className=' overflow-x-auto flex no-scrollbar overflow-y-hidden'>
+                    <ul className='flex gap-10 flex-row w-full'>
                         {cocktails.map((cocktail, index) => (
-                            <div key={index} className='bg-zinc-800 gap-5 flex flex-col rounded-2xl overflow-hidden'>
+                            <li key={index} className='bg-zinc-800 gap-5 flex-col rounded-2xl flex min-w-[260px] min-h-[150px] w-full max-w-screen overflow-hidden'>
                                 <div className='flex justify-center'>
-                                    <Image src={cocktail.image} alt={`Cocktail : ${cocktail.title.toLowerCase()}`} loading='lazy' placeholder='empty' width={230} height={150} style={{ display: "block" }}/>
+                                    <Image src={cocktail.image} alt={`Cocktail : ${cocktail.title.toLowerCase()}`} loading='lazy' placeholder='empty' width={280} height={150} style={{ display: "block"}}/>
                                 </div>
-                                <div>
-                                    <div>
-                                        <div>{cocktail.title}</div>
+                                <div className='p-5 flex flex-1 gap-5 flex-col justify-between'>
+                                    <div className='gap-3 flex flex-col'>
+                                        <div className='text-2xl font-semibold'>{cocktail.title}</div>
                                         <div>{cocktail.subtitle}</div>
-                                    </div>
-                                    <div>
-                                        <button>{cocktail.seeMore}</button>
+                                    </div> 
+                                    <div className='flex justify-center items-end'>
+                                        <button className='border rounded-2xl py-1 px-10 transform transition-all ease-in-out duration-300 hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900 hover:shadow-2xl hover:shadow-amber-400 hover:cursor-pointer'>{cocktail.seeMore}</button>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
+                </div>
+
+                <div className='flex w-full gap-5 justify-end items-center'>
+                    <button>
+                        <IoIosArrowRoundBack className='size-10'/>
+                    </button>
+                    <button>
+                        <IoIosArrowRoundForward className='size-10'/>
+                    </button>
                 </div>
             </div>
         </div>

@@ -4,3 +4,12 @@ body {
   font-family: var(--font-open-sans), sans-serif;
 }
 
+/* Cacher scrollbar (mais garder le scroll actif) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
