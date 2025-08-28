@@ -7,7 +7,7 @@ import Image from 'next/image';
 import imgCocktailBlue from "@/public/assets/ImgHeroSection/CocktailBlue.webp"
 import imgCocktailYellow from "@/public/assets/ImgHeroSection/CocktailYellow.webp"
 import imgCocktailRed from "@/public/assets/ImgHeroSection/CocktailRed.webp"
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const HeroSection = () => {
   const refHero = useRef(null)
@@ -18,6 +18,8 @@ const HeroSection = () => {
     width: "250px",
     height: "350px"
   }
+
+  const [showImages, setShowImages] = useState(false)
 
   useEffect(() => {
     const elementParent = refHero.current
@@ -48,13 +50,8 @@ const HeroSection = () => {
 
   }, [])
 
-  // useEffect(() => {
-  //   const 
-  // }, [])
-
-
   return (
-    <div ref={refHero} className="relative h-[85vh] group/hero overflow-hidden">
+    <div ref={refHero} className="relative h-[85vh] group/hero overflow-hidden" onMouseEnter={() => setShowImages(true)} onMouseLeave={() => setShowImages(false)}>
         <Image src={imageBar} alt="Bar à cocktails" placeholder="blur" quality={75} fill className="object-cover"  fetchPriority='high' sizes='(max-width: 1250px) 100vw, 1250px'/>
         <div className="absolute inset-0 transition-all duration-300 group-hover/hero:backdrop-blur-sm z-10" />
         <div className="absolute inset-0 bg-black/30 flex flex-col justify-between items-center md:py-8 py-5 px-4 text-center z-20">
@@ -62,9 +59,9 @@ const HeroSection = () => {
                 <h1>Des cocktails sur-mesure pour vos évènements</h1>
             </div>
             <div ref={refImg} className='hidden flex-row gap-5'>
-              <Image src={imgCocktailBlue} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className='-rotate-15 '/>
-              <Image src={imgCocktailYellow} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero}/>
-              <Image src={imgCocktailRed} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className='rotate-15'/>
+              <Image src={imgCocktailBlue} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`-rotate-15 transition-opacity duration-500 ease-out ${showImages ? "opacity-100" : "opacity-0"}`}/>
+              <Image src={imgCocktailYellow} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`transition-opacity ease-out duration-500 ${showImages ? "opacity-100 delay-150" : "opacity-0"}`}/>
+              <Image src={imgCocktailRed} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`rotate-15 transition-opacity ease-out duration-500 ${showImages ? "opacity-100 delay-300" : "opacity-0"}`}/>
             </div>
             <div>
                 <BtnReservation />
