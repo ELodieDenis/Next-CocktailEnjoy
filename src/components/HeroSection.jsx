@@ -21,35 +21,6 @@ const HeroSection = () => {
 
   const [showImages, setShowImages] = useState(false)
 
-  useEffect(() => {
-    const elementParent = refHero.current
-    const elementChild = refImg.current
-
-    if(!elementParent || !elementChild) return;
-
-    const handleMouseEnter = () => {
-
-      if(elementChild.classList.contains("hidden")) {
-        elementChild.classList.add("flex")
-        elementChild.classList.remove("hidden")
-      }
-    }
-
-    const handleMouseLeave = () => {
-      if(elementChild.classList.contains("flex")) {
-        elementChild.classList.remove("flex")
-        elementChild.classList.add("hidden")
-      }
-    }
-
-    elementParent.addEventListener("mouseenter", handleMouseEnter)
-    elementParent.addEventListener("mouseleave", handleMouseLeave)
-    
-    return () => {elementParent.removeEventListener("mouseenter", handleMouseEnter)
-    elementParent.removeEventListener("mouseleave", handleMouseLeave)}
-
-  }, [])
-
   return (
     <div ref={refHero} className="relative h-[85vh] group/hero overflow-hidden" onMouseEnter={() => setShowImages(true)} onMouseLeave={() => setShowImages(false)}>
         <Image src={imageBar} alt="Bar à cocktails" placeholder="blur" quality={75} fill className="object-cover"  fetchPriority='high' sizes='(max-width: 1250px) 100vw, 1250px'/>
@@ -58,10 +29,10 @@ const HeroSection = () => {
             <div className="text-white text-4xl drop-shadow-lg">
                 <h1>Des cocktails sur-mesure pour vos évènements</h1>
             </div>
-            <div ref={refImg} className='hidden flex-row gap-5'>
-              <Image src={imgCocktailBlue} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`-rotate-15 transition-opacity duration-500 ease-out ${showImages ? "opacity-100" : "opacity-0"}`}/>
-              <Image src={imgCocktailYellow} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`transition-opacity ease-out duration-500 ${showImages ? "opacity-100 delay-150" : "opacity-0"}`}/>
-              <Image src={imgCocktailRed} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`rotate-15 transition-opacity ease-out duration-500 ${showImages ? "opacity-100 delay-300" : "opacity-0"}`}/>
+            <div ref={refImg} className='flex flex-row gap-5'>
+              <Image src={imgCocktailBlue} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all -rotate-15 duration-300 ease-out ${showImages ? "opacity-100" : "opacity-0"}`}/>
+              <Image src={imgCocktailYellow} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all ease-out duration-300 ${showImages ? "opacity-100 delay-150" : "opacity-0"}`}/>
+              <Image src={imgCocktailRed} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all rotate-15 ease-out duration-300 ${showImages ? "opacity-100 delay-300" : "opacity-0"}`}/>
             </div>
             <div>
                 <BtnReservation />

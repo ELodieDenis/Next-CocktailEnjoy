@@ -3,6 +3,7 @@ import HeroSection from "@/src/components/HeroSection";
 import WhoAreYou from "@/src/components/WhoAreYou";
 import Services from "@/src/components/Services";
 import Cocktails from "@/src/components/Cocktails";
+import Footer from "@/src/components/Footer";
 
 export const metadata = {
   title: "Cocktail Enjoy - Barman à domicile en Charente-Maritime",
@@ -21,6 +22,7 @@ export default function Home() {
           <WhoAreYou />
           <Services />
           <Cocktails />
+          <Footer />
       </div>
     </>
   );
