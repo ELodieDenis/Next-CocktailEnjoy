@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaFacebook, FaInstagram } from "react-icons/fa6"
+import { IoLogoLinkedin } from "react-icons/io5";
 
 const Footer = () => {
     return (
@@ -25,19 +27,23 @@ const Footer = () => {
                     <div className='gap-6 flex flex-col'>
                         <h3 className='font-semibold'>NAVIGATION</h3>
                         <div className='flex flex-col gap-2'>
-                            <a href="#">Accueil</a>
-                            <a href="#">Prestations</a>
-                            <a href="#">Créations</a>
-                            <a href="#">À propos</a>
-                            <a href="#">Contact</a>
+                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Accueil</a>
+                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Prestations</a>
+                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Créations</a>
+                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>À propos</a>
+                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Contact</a>
                         </div>
                     </div>
-                    <div>
-                        <div>NOS RÉSEAUX</div>
-                        <div>
-                            <Image src="/icons/fa.png" alt='Logo Facebook' width={50} height={50}/>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                    <div className='flex gap-6 flex-col'>
+                        <div className='font-semibold'>NOS RÉSEAUX</div>
+                        <div className='flex flex-row gap-5'>
+                            <a href="https://www.facebook.com/profile.php?id=100083158819638#" target='_blank'>
+                                <FaFacebook className='size-10 hover:cursor-pointer hover:scale-105 hover:text-amber-400' />
+                            </a>
+                            <a href="https://www.instagram.com/cocktail.enjoy/?hl=fr" target='_blank'>
+                                <FaInstagram className='size-10 hover:cursor-pointer hover:scale-105 hover:text-amber-400' />
+                            </a>
+                            <IoLogoLinkedin className='size-10 hover:cursor-pointer hover:scale-105 hover:text-amber-400' />
                         </div>
                     </div>
                 </div>
