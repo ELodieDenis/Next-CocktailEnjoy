@@ -3,12 +3,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import BtnReservation from "./BtnReservation";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [stateItem, setStateItem] = useState("")
   const refHeader = useRef()
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const navItems = [
+    { name: "Accueil", href: "/"},
+    { name: "Prestations", href: "/prestations"},
+    { name: "Créations", href: "/creations"},
+    { name: "À propos", href: "/apropos"},
+    { name: "Contact", href: "/contact"}
+  ]
 
     useEffect(() => {
         const handleResize = () => {
@@ -34,12 +44,12 @@ const Navbar = () => {
 
         <nav className={`${ isMenuOpen ? "flex flex-col gap-8 absolute top-[4.5rem] right-0 p-6 z-200 bg-zinc-900 w-full max-w-[250px] shadow-lg" : "hidden lg:flex" } items-center`} aria-label="Menu principal">
             <ul className={`flex ${isMenuOpen ? "flex-col gap-6" : "flex-row gap-10"}`}>
-                {["Accueil", "Prestations", "Créations", "À propos", "Contact"].map((item) => (
-                    <li key={item} className="hover:scale-105">
-                        <a href={`#${item.toLowerCase()}`} className="text-amber-50 hover:text-amber-300 transition-transform transform">
-                            {item}
-                        </a>
-                    </li>
+                {navItems.map((item) => (
+                  <li key={item.name} className="hover:scale-105">
+                      <Link href={item.href} className="text-amber-50 hover:text-amber-300 transition-transform transform">
+                          {item.name}
+                      </Link>
+                  </li>
                 ))}
             </ul>
             <BtnReservation className="lg:hidden" />

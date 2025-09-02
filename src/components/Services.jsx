@@ -1,19 +1,33 @@
+"use client"
 import React from 'react';
 import services from "../data/services.json"
 import Image from 'next/image';
+import Link from 'next/link';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 const Services = () => {
+    useEffect(() => {
+    AOS.init({
+      duration: 600, // durée de l'animation en ms
+      once: true,
+      delay: 150    // si true = animation se joue une seule fois
+    });
+  }, []);
     return (
         <>
             <div className='max-w-[1250px] m-auto px-10 pb-10 text-white'>
                 <div className=''>
                     <div className='pb-5'>
-                        <h2 className='text-3xl font-semibold'>Descriptions des prestations</h2>
+                        <Link href="/prestations">
+                            <h2 className='text-3xl font-semibold'>Descriptions des prestations</h2>
+                        </Link>
                     </div> 
                     <div>
                         <div className='flex flex-col w-full object-cover gap-5'>
                             {services.map((service, index) => (
-                                <div key={index} className='overflow-hidden flex flex-row bg-zinc-800 rounded-2xl'>
+                                <div key={index} data-aos="fade-right" data-aos-delay={index * 250} className='overflow-hidden flex flex-row bg-zinc-800 rounded-2xl'>
                                     <div>
                                         <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' width={230} height={180} className='w-[230px] h-[180px] object-cover'/>
                                     </div>

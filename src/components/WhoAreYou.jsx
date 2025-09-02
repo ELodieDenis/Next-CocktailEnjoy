@@ -21,7 +21,7 @@ const WhoAreYou = () => {
                         </div>
                         <div className='flex w-full justify-center'>
                             <a href="#reservation" aria-label='Page de réservation'>
-                                <button className="flex items-center justify-center transform transition-all ease-in-out duration-300 rounded-4xl h-10 p-6 text-white border border-white hover:cursor-pointer hover:scale-105 text-2xl hover:shadow-amber-400 hover:shadow-2xl hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900">A propos</button>
+                                <button className="flex items-center justify-center transform transition-all ease-in-out duration-300 rounded-4xl h-10 px-8 text-white border border-white hover:cursor-pointer hover:scale-103 text-xl hover:shadow-amber-400 hover:shadow-2xl hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900">A propos</button>
                             </a>
                         </div>
                     </div>
