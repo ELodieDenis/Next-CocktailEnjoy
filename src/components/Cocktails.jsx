@@ -56,9 +56,9 @@ const Cocktails = () => {
 
     useEffect(() => {
         AOS.init({
-          duration: 600, // durée de l'animation en ms
-          once: true,
-          delay: 150    // si true = animation se joue une seule fois
+            duration: 600,
+            once: true,
+            delay: 150
         });
     }, []);
 
@@ -75,8 +75,8 @@ const Cocktails = () => {
                     <div ref={refUl} className='overflow-x-auto flex no-scrollbar '>
                         <ul className='flex gap-10 flex-row w-full px-auto'>
                             {cocktails.map((cocktail, index) => (
-                                <li data-aos="fade-up" data-aos-delay={index * 250} key={index} className=' bg-zinc-800 flex-col rounded-2xl flex min-w-[280px] min-h-[150px] max-w-screen overflow-hidden hover:cursor-pointer'>
-                                    <div className='overflow-hidden rounded-2xl transition-transform duration-150 ease-in-out hover:scale-105 h-full flex flex-col'>
+                                <li data-aos="fade-up" data-aos-delay={index * 250} key={index} className='  flex-col rounded-2xl flex min-w-[280px] min-h-[150px] max-w-screen hover:cursor-pointer py-5'>
+                                    <div className=' overflow-hidden rounded-2xl transition-transform duration-150 ease-in-out hover:scale-103 h-full flex flex-col bg-zinc-800'>
                                         <div className='flex justify-center'>
                                             <Image src={cocktail.image} alt={`Cocktail : ${cocktail.title.toLowerCase()}`} loading='lazy' placeholder='empty' width={280} height={150} style={{ display: "block"}}/>
                                         </div>
@@ -97,10 +97,10 @@ const Cocktails = () => {
 
                     <div className='flex flex-row gap-5 py-5 justify-end'>
                         <button  onClick={handleClickRight} className={`${scrollX <= 0 ? "opacity-0 pointer-events-none" : ""}`}>
-                            <IoIosArrowRoundBack className={`size-8 ${scrollX > 0 && hoverDiv === true ? "animate-pulse ring ring-amber-400 bg-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)]" : ""}`} />
+                            <IoIosArrowRoundBack className={`size-8 ${scrollX > 0 && hoverDiv === true ? "animate-pulse ring ring-amber-400 bg-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)] hover:cursor-pointer" : ""}`} />
                         </button>
                         <button onClick={handleClickLeft} className={`${scrollX >= maxScrollX - 2 ? "opacity-0 pointer-events-none" : ""}`}>
-                            <IoIosArrowRoundForward className={`size-8 ${scrollX < maxScrollX && hoverDiv === true ? "animate-pulse ring ring-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)] bg-amber-400" : ""}`}/>
+                            <IoIosArrowRoundForward className={`size-8 ${scrollX < maxScrollX && hoverDiv === true ? "animate-pulse ring ring-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)] bg-amber-400 hover:cursor-pointer" : ""}`}/>
                         </button>
                     </div>
                 </div>
