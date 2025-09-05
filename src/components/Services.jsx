@@ -21,26 +21,22 @@ const Services = () => {
     const cardRef = useRef([])
     const imgRef = useRef([])
     const [stateCard, setStateCard] = useState(false)
+    const [hoverIndex, setHoverIndex] = useState(null)
 
     const useCard = (state, index) => {
         setStateCard((prev) => !prev)
-        console.log(`Index : ${index}, state: ${state}`)
 
         const img = imgRef.current[index]
         if(!img) return
 
-        console.log(img.classList)
-        img.classList.add("hidden")
-        console.log(img.classList)
-        console.log(img.className)
-        console.dir(img)
-
-        if(img.classList.contains("hidden")) {
-            console.log("HIDDEN")
-            img.classList.add("flex")
-            img.classList.remove("hidden")
+        if(state) {
+            setHoverIndex(index)
+            // img.classList.add("hidden")
+            // img.classList.remove("flex")
         } else {
-            console.log("PAS HIDDEN")
+            setHoverIndex(null)
+            // img.classList.remove("hidden")
+            // img.classList.add("flex")
         }
     }
 
@@ -62,13 +58,13 @@ const Services = () => {
                     <div>
                         <div className='flex flex-col w-full object-cover gap-5'>
                             {services.map((service, index) => (
-                                <div onMouseEnter={() => useCard(true, index)} onMouseLeave={() => useCard(false, index)} ref={(el) => (cardRef.current[index]) = el} key={service.index} data-aos="fade-right" data-aos-delay={index * 250} className='overflow-hidden flex flex-row bg-zinc-800 rounded-2xl h-[160px] w-full relative hover:cursor-pointer'>
-                                    <div ref={(el) => (imgRef.current[index]) = el} className='w-full h-auto'>
-                                        <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' fill className='object-cover'/>
+                                <div onMouseEnter={() => useCard(true, index)} onMouseLeave={() => useCard(false, index)} ref={(el) => (cardRef.current[index]) = el} key={service.index} data-aos="fade-right" data-aos-delay={index * 250} className={"overflow-hidden flex flex-row  rounded-2xl h-[160px] w-full relative hover:cursor-pointer bg-zinc-800"}>
+                                    <div ref={(el) => (imgRef.current[index]) = el} className={"flex w-full h-auto"}>
+                                        <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' fill className="object-cover" />
                                     </div>
-                                    <div className='absolute p-6 gap-3 flex w-1/2 h-full'>
+                                    <div className={`${hoverIndex === index ? "absolute p-6 gap-3 flex w-1/2 h-full flex-col bg-zinc-800 transform transition-all ease-in-out duration-500" : "absolute p-6 gap-3 flex w-1/2 h-full flex-col"}`}>
                                         <h3 className='font-semibold text-2xl'>{service.title}</h3>
-                                        {/* <p>{service.subtitle}</p> */}
+                                        {hoverIndex === index && <p>{service.subtitle}</p>}
                                     </div> 
                                 </div>
                             ))}
