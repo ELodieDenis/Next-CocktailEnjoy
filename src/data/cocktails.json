@@ -4,34 +4,39 @@
         "image2" : "/assets/Cocktails/DetourCocktails/GreenCocktail.webp",
         "title": "Jungle Whisper",
         "subtitle": "Un cocktail exotique où la pomme verte et le basilic se mêlent à un soupçon de gin pour un voyage en pleine nature.",
-        "seeMore": "Découvrir"
+        "seeMore": "Découvrir",
+        "index": "1"
     },
         {
         "image" : "/assets/Cocktails/CocktailKiwi.webp",
         "image2" : "/assets/Cocktails/DetourCocktails/KiwiCocktail.webp",
         "title": "Emerald Breeze",
         "subtitle": "Un souffle frais et léger, alliant menthe, kiwi et une touche de citron vert pour une explosion de fraîcheur.",
-        "seeMore": "Découvrir"
+        "seeMore": "Découvrir",
+        "index": "2"
     },
         {
         "image" : "/assets/Cocktails/CocktailOrange2.webp",
         "image2" : "/assets/Cocktails/DetourCocktails/OrangeCocktail.webp",
         "title": "Sunset Glow",
         "subtitle": "Un mélange lumineux d’orange, de mangue et de rhum blanc, comme un coucher de soleil dans un verre.",
-        "seeMore": "Découvrir"
+        "seeMore": "Découvrir",
+        "index": "3"
     },
         {
         "image" : "/assets/Cocktails/CocktailRed2.webp",
         "image2" : "/assets/Cocktails/DetourCocktails/RedCocktail.webp",
         "title": "Crimson Sunset",
         "subtitle": "Un cocktail flamboyant mêlant grenade, fraise et vodka, rappelant la chaleur d’un coucher de soleil.",
-        "seeMore": "Découvrir"
+        "seeMore": "Découvrir",
+        "index": "4"
     },
     {
         "image" : "/assets/Cocktails/CocktailTurquoiseBlue.webp",
         "image2" : "/assets/Cocktails/DetourCocktails/TurquoiseBlueCocktail.webp",
         "title": "Blue Lagoon",
         "subtitle": "Un classique revisité : curaçao bleu, citron et vodka pour une boisson rafraîchissante et lumineuse.",
-        "seeMore": "Découvrir"
+        "seeMore": "Découvrir",
+        "index": "5"
     }
 ]

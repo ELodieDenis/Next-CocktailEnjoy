@@ -18,54 +18,35 @@ const Services = () => {
         });
     }, []);
 
-    const cardRef = useRef(null)
-    const imgRef = useRef(null)
+    const cardRef = useRef([])
+    const imgRef = useRef([])
     const [stateCard, setStateCard] = useState(false)
 
-    const useCard = (state) => {
-        setStateCard(state)
-        console.log(stateCard)
+    const useCard = (state, index) => {
+        setStateCard((prev) => !prev)
+        console.log(`Index : ${index}, state: ${state}`)
 
-        if(!imgRef) return
-        if(imgRef) {
-            console.log(imgRef.current.classList)
-            imgRef.current.classList.add("hidden")
-            console.log(imgRef.current.classLidt)
-        }
+        const img = imgRef.current[index]
+        if(!img) return
 
-        if(imgRef.current.classList === "hidden") {
-            imgRef.current.classLidt.remove("hidden")
+        console.log(img.classList)
+        img.classList.add("hidden")
+        console.log(img.classList)
+        console.log(img.className)
+        console.dir(img)
+
+        if(img.classList.contains("hidden")) {
+            console.log("HIDDEN")
+            img.classList.add("flex")
+            img.classList.remove("hidden")
+        } else {
+            console.log("PAS HIDDEN")
         }
     }
 
     useEffect(() => {
         console.log(imgRef.current.classList)
-
-        // if(!imgRef) return
-        // if(imgRef) {
-        //     console.log(imgRef.current.classList)
-        //     imgRef.current.classList.add("hidden")
-        //     console.log(imgRef.current.classLidt)
-        // }
-
-
-
-        // if(!cardRef) return;
-
-        // if(cardRef) {
-        //     console.log(cardRef.current) 
-        //     console.log(cardRef.current.classList[1]) 
-        //     console.dir(cardRef.current) 
-        // }
-
-        // if(cardRef.current.classList[1] === "flex") {
-        //     console.log("FLEX")
-        //     // cardRef.current.classList.remove("flex")
-        //     // cardRef.current.classList.add("hidden")
-        //     console.log(cardRef.current.classList)
-        // } else {
-        //     console.log("ERREUR")
-        // }
+        console.log(cardRef.current)
     }, [])
 
 
@@ -81,9 +62,9 @@ const Services = () => {
                     <div>
                         <div className='flex flex-col w-full object-cover gap-5'>
                             {services.map((service, index) => (
-                                <div onMouseEnter={() => useCard(true)} onMouseLeave={() => useCard(false)} ref={cardRef} key={index} data-aos="fade-right" data-aos-delay={index * 250} className='overflow-hidden flex flex-row bg-zinc-800 rounded-2xl h-[160px] w-full relative hover:cursor-pointer'>
-                                    <div className='w-full h-auto'>
-                                        <Image ref={imgRef} src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' fill className='object-cover'/>
+                                <div onMouseEnter={() => useCard(true, index)} onMouseLeave={() => useCard(false, index)} ref={(el) => (cardRef.current[index]) = el} key={service.index} data-aos="fade-right" data-aos-delay={index * 250} className='overflow-hidden flex flex-row bg-zinc-800 rounded-2xl h-[160px] w-full relative hover:cursor-pointer'>
+                                    <div ref={(el) => (imgRef.current[index]) = el} className='w-full h-auto'>
+                                        <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' fill className='object-cover'/>
                                     </div>
                                     <div className='absolute p-6 gap-3 flex w-1/2 h-full'>
                                         <h3 className='font-semibold text-2xl'>{service.title}</h3>
