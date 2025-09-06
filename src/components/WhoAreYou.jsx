@@ -5,9 +5,6 @@ import PhotoFace from "@/public/assets/PhotoFace.webp"
 const WhoAreYou = () => {
     return (
         <>
-            <div>
-                <marquee behavior="" direction="left" bgcolor="red">Bonjour</marquee>
-            </div>
             {/* <div className='w-full text-white'>
                 <div className='flex flex-col md:flex-row max-w-[1250px] mx-auto py-15 justify-between px-10'>
                     <div className='flex flex-col gap-5'>

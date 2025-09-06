@@ -4,6 +4,7 @@ import WhoAreYou from "@/src/components/WhoAreYou";
 import Services from "@/src/components/Services";
 import Cocktails from "@/src/components/Cocktails";
 import Footer from "@/src/components/Footer";
+import Partners from "@/src/components/Partners";
 
 export const metadata = {
   title: "Cocktail Enjoy - Barman à domicile en Charente-Maritime",
@@ -19,7 +20,8 @@ export default function Home() {
       <div className="bg-zinc-900">
           <Navbar />
           <HeroSection />
-          <WhoAreYou />
+          {/* <WhoAreYou /> */}
+          <Partners />
           <Services />
           <Cocktails />
           <Footer />
