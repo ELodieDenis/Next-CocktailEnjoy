@@ -29,10 +29,40 @@ const HeroSection = () => {
             <div className="text-white text-4xl drop-shadow-lg">
                 <h1>Des cocktails sur-mesure pour vos évènements</h1>
             </div>
-            <div ref={refImg} className='flex flex-row gap-5'>
-              <Image src={imgCocktailBlue} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all -rotate-15 duration-300 ease-out ${showImages ? "opacity-100" : "opacity-0"}`}/>
-              <Image src={imgCocktailYellow} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all ease-out duration-300 ${showImages ? "opacity-100 delay-100" : "opacity-0"}`}/>
-              <Image src={imgCocktailRed} alt='Cocktail bleu création' sizes='(max-width: 250px) 20vh, 250px' quality={75} style={imgHero} className={`hover:cursor-pointer hover:scale-110 transition-all rotate-15 ease-out duration-300 ${showImages ? "opacity-100 delay-200" : "opacity-0"}`}/>
+            <div ref={refImg} className="flex flex-row gap-5">
+              <Image
+                src={imgCocktailBlue}
+                alt="Cocktail bleu création"
+                quality={75}
+                className={`
+                  border-4 border-[#88592F] object-cover
+                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
+                  hover:cursor-pointer hover:scale-110 transition-all -rotate-15 duration-300 ease-out
+                  ${showImages ? "opacity-100" : "opacity-0"}
+                `}
+              />
+              <Image
+                src={imgCocktailYellow}
+                alt="Cocktail jaune création"
+                quality={75}
+                className={`
+                  border-4 border-[#88592F] object-cover
+                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
+                  hover:cursor-pointer hover:scale-110 transition-all ease-out duration-300
+                  ${showImages ? "opacity-100 delay-100" : "opacity-0"}
+                `}
+              />
+              <Image
+                src={imgCocktailRed}
+                alt="Cocktail rouge création"
+                quality={75}
+                className={`
+                  border-4 border-[#88592F] object-cover
+                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
+                  hover:cursor-pointer hover:scale-110 transition-all rotate-15 ease-out duration-300
+                  ${showImages ? "opacity-100 delay-200" : "opacity-0"}
+                `}
+              />
             </div>
             <div>
                 <BtnReservation />

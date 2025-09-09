@@ -7,8 +7,8 @@ const Footer = () => {
     return (
         <>
             <div className='text-white'>
-                <div className='max-w-[1250px] m-auto px-10 py-10 flex flex-row justify-between'>
-                    <div>
+                <div className='max-w-[1250px] m-auto px-10 py-10 flex flex-row justify-between max-md:grid max-md:grid-cols-3 gap-10'>
+                    <div className='max-md:col-span-3'>
                         <a href="/" aria-label="Logo de l'entreprise Cocktail Enjoy">                        
                             <Image src="/assets/Logo.webp" alt='Logo Cocktail Enjoy' width={200} height={106}/>
                         </a>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                     <div className='flex gap-6 flex-col'>
                         <div className='font-semibold'>NOS RÉSEAUX</div>
-                        <div className='flex flex-row gap-5'>
+                        <div className='flex flex-row gap-5 max-md:flex-col'>
                             <a href="https://www.facebook.com/profile.php?id=100083158819638#" aria-label="Logo Facebook" target='_blank'>
                                 <FaFacebook className='size-10 hover:cursor-pointer hover:scale-105 hover:text-amber-400'/>
                             </a>

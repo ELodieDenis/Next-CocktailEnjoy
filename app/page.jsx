@@ -20,10 +20,9 @@ export default function Home() {
       <div className="bg-zinc-900">
           <Navbar />
           <HeroSection />
-          {/* <WhoAreYou /> */}
-          <Partners />
           <Services />
           <Cocktails />
+          <Partners />
           <Footer />
       </div>
     </>

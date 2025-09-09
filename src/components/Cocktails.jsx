@@ -86,7 +86,7 @@ const Cocktails = () => {
                                                 <div>{cocktail.subtitle}</div>
                                             </div> 
                                             <div className='flex justify-center items-end'>
-                                                <button className='border rounded-2xl py-1 px-10 transform transition-all ease-in-out duration-300 hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900 hover:shadow-2xl hover:shadow-amber-400 hover:cursor-pointer'>{cocktail.seeMore}</button>
+                                                <button aria-label="Découvrir les cocktails" className='border rounded-2xl py-1 px-10 transform transition-all ease-in-out duration-300 hover:bg-amber-400 hover:border-amber-400 hover:text-zinc-900 hover:shadow-2xl hover:shadow-amber-400 hover:cursor-pointer'>{cocktail.seeMore}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -96,10 +96,10 @@ const Cocktails = () => {
                     </div>
 
                     <div className='flex flex-row gap-5 py-5 justify-end'>
-                        <button  onClick={handleClickRight} className={`${scrollX <= 0 ? "opacity-0 pointer-events-none" : ""}`}>
+                        <button aria-label='Chevron défillement vers la gauche' onClick={handleClickRight} className={`${scrollX <= 0 ? "opacity-0 pointer-events-none" : ""}`}>
                             <IoIosArrowRoundBack className={`size-8 ${scrollX > 0 && hoverDiv === true ? "animate-pulse ring ring-amber-400 bg-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)] hover:cursor-pointer" : ""}`} />
                         </button>
-                        <button onClick={handleClickLeft} className={`${scrollX >= maxScrollX - 2 ? "opacity-0 pointer-events-none" : ""}`}>
+                        <button aria-label='Chevron défillement vers la droite' onClick={handleClickLeft} className={`${scrollX >= maxScrollX - 2 ? "opacity-0 pointer-events-none" : ""}`}>
                             <IoIosArrowRoundForward className={`size-8 ${scrollX < maxScrollX && hoverDiv === true ? "animate-pulse ring ring-amber-400 rounded-full shadow-[0_0_10px_2px_rgba(251,191,36,0.3)] bg-amber-400 hover:cursor-pointer" : ""}`}/>
                         </button>
                     </div>

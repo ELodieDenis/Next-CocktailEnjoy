@@ -6,12 +6,8 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 const ArrayCreations = () => {
-    const radius = 120; // rayon du cercle
-    const center = radius; // centre (x, y)
-    const total = cocktails.length;
-
     const btnRef = useRef(null)
-    const [stateBtn, setStateBtn] = useState("false")
+    // const [stateBtn, setStateBtn] = useState("false")
     const [stockValueTitle, setStockValueTitle] = useState("")
 
     useEffect(() => {
@@ -30,9 +26,11 @@ const ArrayCreations = () => {
             return
         }
 
-        const foundCocktail = cocktails.find(
+        const foundCocktail = cocktails.filter(
             (cocktail) => cocktail.title === inputValue
         )
+
+        console.log(foundCocktail)
 
         if(foundCocktail) {
             setStockValueTitle(foundCocktail)

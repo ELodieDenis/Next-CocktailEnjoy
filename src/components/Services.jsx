@@ -54,11 +54,11 @@ const Services = () => {
                     <div>
                         <div className='flex flex-col w-full object-cover gap-5'>
                             {services.map((service, index) => (
-                                <div onMouseEnter={() => useCard(true, index)} onMouseLeave={() => useCard(false, index)} ref={(el) => (cardRef.current[index]) = el} key={service.index} data-aos="fade-right" data-aos-delay={index * 250} className={"overflow-hidden flex flex-row rounded-2xl h-[160px] w-full relative hover:cursor-pointer bg-zinc-800"}>
+                                <div onMouseEnter={() => useCard(true, index)} onMouseLeave={() => useCard(false, index)} ref={(el) => (cardRef.current[index]) = el} key={service.index} data-aos="fade-right" data-aos-delay={index * 250} className={"overflow-hidden flex flex-row rounded-2xl h-[200px] w-full relative hover:cursor-pointer"}>
                                     <div ref={(el) => (imgRef.current[index]) = el} className={`relative h-full transition-all duration-1000 ease-in-out ml-auto ${hoverIndex === index ? "w-1/2" : "w-full"}`}>
                                         <Image src={service.image} alt={`Service : ${service.title.toLowerCase()}`} loading='lazy' placeholder='empty' fill className="object-cover" />
                                     </div>
-                                    <div className={`${hoverIndex === index ? "absolute p-6 gap-3 flex w-1/2 h-full flex-col bg-zinc-800 transform transition-all ease-in-out duration-500" : "absolute p-6 gap-3 flex w-1/2 h-full flex-col"}`}>
+                                    <div className={`${hoverIndex === index ? "absolute p-6 gap-3 flex w-1/2 h-full flex-col bg-zinc-800 transform transition-all ease-in-out duration-500 max-md:w-full" : "absolute p-6 gap-3 flex w-1/2 h-full flex-col max-md:w-full"}`}>
                                         <h3 className='font-semibold text-2xl hover:scale-103 hover:text-amber-400'>{service.title}</h3>
                                         {hoverIndex === index && <p>{service.subtitle}</p>}
                                     </div> 
