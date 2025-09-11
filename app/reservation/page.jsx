@@ -1,17 +1,15 @@
 import React from 'react';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
-import ArrayCreations from '@/src/components/compCreations/ArrayCreations';
+import FromContact from '@/src/components/compContact/FromContact';
 
 const page = () => {
     return (
         <>
-            <div>
+            <div className='bg-zinc-900'>
                 <Navbar />
-            </div>
-            <div className='bg-zinc-900 text-white'>
-                <ArrayCreations />
-                            <Footer />
+                <FromContact />
+                <Footer />
             </div>
         </>
     );

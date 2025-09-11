@@ -29,11 +29,11 @@ const Footer = () => {
                     <div className='gap-6 flex flex-col'>
                         <h3 className='font-semibold'>NAVIGATION</h3>
                         <div className='flex flex-col gap-2'>
-                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Accueil</a>
+                            <a href="/" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Accueil</a>
                             <a href="/prestations" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Prestations</a>
                             <a href="/creations" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Créations</a>
                             <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>À propos</a>
-                            <a href="#" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Contact</a>
+                            <a href="/reservation" className='hover:text-amber-400 hover:cursor-pointer hover:scale-105'>Contact</a>
                         </div>
                     </div>
                     <div className='flex gap-6 flex-col'>

@@ -6,7 +6,7 @@ const Partners = () => {
   return (
     <div className="bg-zinc-900 flex justify-center w-full pb-10 overflow-hidden">
       <div className="max-w-[1250px] m-auto flex-col flex w-full px-10">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,200,50,0.5)]">
+        <h2 className="text-2xl font-semibold text-white hover:cursor-pointer">
           Nos partenaires :
         </h2>
 

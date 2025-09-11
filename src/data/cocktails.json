@@ -4,6 +4,7 @@
         "image2" : "/assets/Cocktails/DetourCocktails/GreenCocktail.webp",
         "title": "Jungle Whisper",
         "subtitle": "Un cocktail exotique où la pomme verte et le basilic se mêlent à un soupçon de gin pour un voyage en pleine nature.",
+        "detail": "gin, pomme verte, feuilles de basilic, jus de citron, sirop de sucre de canne, eau gazeuse",
         "seeMore": "Découvrir",
         "index": "1"
     },
@@ -12,6 +13,7 @@
         "image2" : "/assets/Cocktails/DetourCocktails/KiwiCocktail.webp",
         "title": "Emerald Breeze",
         "subtitle": "Un souffle frais et léger, alliant menthe, kiwi et une touche de citron vert pour une explosion de fraîcheur.",
+        "detail": "rhum blanc, kiwi frais, feuilles de menthe, jus de citron vert, sirop de sucre de canne, eau gazeuse",
         "seeMore": "Découvrir",
         "index": "2"
     },
@@ -20,6 +22,7 @@
         "image2" : "/assets/Cocktails/DetourCocktails/OrangeCocktail.webp",
         "title": "Sunset Glow",
         "subtitle": "Un mélange lumineux d’orange, de mangue et de rhum blanc, comme un coucher de soleil dans un verre.",
+        "detail": "rhum blanc, jus d'orange frais, purée de mangue, sirop de grenadine",
         "seeMore": "Découvrir",
         "index": "3"
     },
@@ -28,6 +31,7 @@
         "image2" : "/assets/Cocktails/DetourCocktails/RedCocktail.webp",
         "title": "Crimson Sunset",
         "subtitle": "Un cocktail flamboyant mêlant grenade, fraise et vodka, rappelant la chaleur d’un coucher de soleil.",
+        "detail": "vodka, jus de grenade, purée de fraise, sirop de sucre",
         "seeMore": "Découvrir",
         "index": "4"
     },
@@ -36,6 +40,7 @@
         "image2" : "/assets/Cocktails/DetourCocktails/TurquoiseBlueCocktail.webp",
         "title": "Blue Lagoon",
         "subtitle": "Un classique revisité : curaçao bleu, citron et vodka pour une boisson rafraîchissante et lumineuse.",
+        "detail": "vodka, curaçao bleu, jus de citron, limonade",
         "seeMore": "Découvrir",
         "index": "5"
     }

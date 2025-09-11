@@ -17,14 +17,14 @@ const Navbar = () => {
     { name: "Prestations", href: "/prestations"},
     { name: "Créations", href: "/creations"},
     { name: "À propos", href: "/apropos"},
-    { name: "Contact", href: "/contact"}
+    { name: "Contact", href: "/reservation"}
   ]
 
     useEffect(() => {
         const handleResize = () => {
-            if(document.documentElement.clientWidth >= 1024) {
-                setIsMenuOpen(false)
-            }
+          if(document.documentElement.clientWidth >= 1024) {
+            setIsMenuOpen(false)
+          }
         }
 
         handleResize()
@@ -49,7 +49,7 @@ const Navbar = () => {
                       <Link href={item.href} className="text-amber-50 hover:text-amber-300 transition-transform transform">
                           {item.name}
                       </Link>
-                  </li>
+                  </li> 
                 ))}
             </ul>
             <BtnReservation className="lg:hidden" />
