@@ -1,41 +1,111 @@
-import React from 'react';
+"use client"
 
-const FromContact = () => {
+import React from "react";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import Modal from "./Modal";
+
+const ContactForm = () => {
+    const [name, setName] = useState("")
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [object, setObject] = useState("select")
+    const [message, setMessage] = useState("")
+    const [modal, setModal] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
+    const handleModal = () => {
+        if(!name | !username | !email | !message) {
+            setModal(false)
+        } else {
+            setModal(true)
+        }
+    }
+
+
     return (
-        <>
-            <div className='text-white'>
-                <div className='flex flex-col max-w-[1250px] mx-auto px-10 py-10'>
-                    <div className='flex justify-center'>
-                        <form>
-                            <div className='flex w-full pb-10'>
-                                <h2 className='text-2xl font-semibold'>Formulaire de contact</h2>
-                            </div>
-                            <ul className='grid grid-cols-1 w-150 border p-15 gap-10'>
-                                <div className='flex flex-row w-full justify-between'>
-                                    <li className='border-b-2 bg-zinc-800 rounded-sm'>
-                                        <input type="text" placeholder='Nom...'/>
-                                    </li>
-                                    <li className='border-b-2 bg-zinc-800 rounded-sm'>
-                                        <input type="text" placeholder='Prénom...' />
-                                    </li>
-                                </div>
-                                <li className='border-b-2 bg-zinc-800 rounded-sm'>
-                                    <input className='w-full' type="email" placeholder='Email...'/>
-                                </li>
-                                <li className='border-b-2 bg-zinc-800 rounded-sm'>
-                                    <input className='w-full' type="text" placeholder='Objet...' />
-                                </li>
-                                <li className='border-b-2 bg-zinc-800 rounded-sm'>
-                                    <textarea className='w-full h-25 resize-y' type="" placeholder='Message'/>
-                                </li>
-                                <button className='border-3 bg-zinc-400 text-black rounded-sm border-black hover:scale-101 hover:cursor-pointer hover:bg-amber-400'>Soumettre</button>
-                            </ul>
-                        </form>
+        <section className="text-white px-6 py-12 max-w-3xl mx-auto">
+            <h2 className="text-2xl font-semibold text-center mb-8">
+                Formulaire de contact
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-zinc-800 rounded-sm border-b-2">
+                        <input
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            type="text"
+                            placeholder="Nom..."
+                            className="w-full px-3 py-2 bg-transparent outline-none"
+                            required
+                        />
+                    </div>
+                    <div className="bg-zinc-800 rounded-sm border-b-2">
+                        <input
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            type="text"
+                            placeholder="Prénom..."
+                            className="w-full px-3 py-2 bg-transparent outline-none"
+                            required
+                        />
                     </div>
                 </div>
-            </div>
-        </>
+                <div className="bg-zinc-800 rounded-sm border-b-2">
+                    <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        type="email"
+                        placeholder="Email..."
+                        className="w-full px-3 py-2 bg-transparent outline-none"
+                        required
+                    />
+                </div>
+                <div className="bg-zinc-800 rounded-sm border-b-2">
+                    <select name="object" className="w-full px-3 py-2 bg-transparent outline-none">
+                        <option value="select" className="bg-zinc-800 text-white">Objet...</option>
+                        <option value="rendezVous" id="1" className="bg-zinc-800 text-white">Prendre un rendez-vous</option>
+                        <option value="renseignement" id="2" className="bg-zinc-800 text-white">Renseignement sur une prestation</option>
+                    </select>
+                </div>
+                <div className="bg-zinc-800 rounded-sm border-b-2">
+                    <textarea
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Message..."
+                        rows={5}
+                        className="w-full px-3 py-2 bg-transparent outline-none resize-y"
+                        required
+                    />
+                </div>
+
+                <button
+                    onClick={handleModal}
+                    type="submit"
+                    className="w-full py-3 rounded-sm border-2 border-black bg-zinc-400 text-black font-semibold transition-transform duration-200 hover:scale-101 hover:bg-amber-400 hover:cursor-pointer"
+                >
+                    Soumettre
+                </button>
+            </form>
+
+            {modal && 
+                createPortal(
+                    <Modal 
+                        closeModal={() => setModal(false)}
+                        name={name}
+                        username={username}
+                        email={email}
+                        message={message}
+                    />, 
+                    document.body
+                )
+            }
+        </section>
     );
 };
 
-export default FromContact;
+export default ContactForm;

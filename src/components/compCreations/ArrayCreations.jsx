@@ -46,13 +46,13 @@ const ArrayCreations = () => {
                 />
                 <button
                     onClick={handleSearch}
-                    className="text-amber-400 hover:text-white hover:bg-amber-400 hover:text-zinc-900 px-5 hover:cursor-pointer border rounded-sm"
+                    className="text-amber-400 hover:bg-amber-400 hover:text-zinc-900 px-5 hover:cursor-pointer border rounded-sm"
                 >
                     Recherche
                 </button>
                 <button
                     onClick={handleReset}
-                    className="text-red-400 hover:text-white hover:bg-red-400 hover:text-zinc-900 px-5 hover:cursor-pointer border rounded-sm"
+                    className="text-red-400 hover:bg-red-400 hover:text-zinc-900 px-5 hover:cursor-pointer border rounded-sm"
                 >
                     X
                 </button>
