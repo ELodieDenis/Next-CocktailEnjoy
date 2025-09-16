@@ -65,7 +65,7 @@ const Cocktails = () => {
     return (
         <div className='text-white' onMouseEnter={() => hoverSlider(true)} onMouseLeave={() => hoverSlider(false)}>
             <div className='max-w-[1250px] mx-auto px-10 py-10 h-auto'>
-                <div className='flex text-3xl font-semibold pb-5'>
+                <div className='flex text-3xl font-semibold pb-10'>
                     <Link rel="stylesheet" href="/creations">
                         <h2>Créations cocktails</h2>
                     </Link>

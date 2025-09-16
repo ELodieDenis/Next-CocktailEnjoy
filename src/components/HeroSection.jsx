@@ -1,76 +1,77 @@
-"use client"
+"use client";
 
-import React from 'react';
-import BtnReservation from './BtnReservation';
-import imageBar from '@/public/assets/Bar.webp';
-import Image from 'next/image';
-import imgCocktailBlue from "@/public/assets/ImgHeroSection/CocktailBlue.webp"
-import imgCocktailYellow from "@/public/assets/ImgHeroSection/CocktailYellow.webp"
-import imgCocktailRed from "@/public/assets/ImgHeroSection/CocktailRed.webp"
-import { useRef, useEffect, useState } from 'react';
+import React, { useState } from "react";
+import BtnReservation from "./BtnReservation";
+import Image from "next/image";
+import imageBar from "@/public/assets/Bar.webp";
+import imgCocktailBlue from "@/public/assets/ImgHeroSection/CocktailBlue.webp";
+import imgCocktailYellow from "@/public/assets/ImgHeroSection/CocktailYellow.webp";
+import imgCocktailRed from "@/public/assets/ImgHeroSection/CocktailRed.webp";
+import { EB_Garamond } from "next/font/google";
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
 
 const HeroSection = () => {
-  const refHero = useRef(null)
-  const refImg = useRef(null)
-
-  const imgHero = {
-    border: "4px solid #88592F",
-    width: "250px",
-    height: "350px"
-  }
-
-  const [showImages, setShowImages] = useState(false)
+  const [showImages, setShowImages] = useState(false);
 
   return (
-    <div ref={refHero} className="relative h-[85vh] group/hero overflow-hidden" onMouseEnter={() => setShowImages(true)} onMouseLeave={() => setShowImages(false)}>
-        <Image src={imageBar} alt="Bar à cocktails" placeholder="blur" quality={75} fill className="object-cover"  fetchPriority='high' sizes='(max-width: 1250px) 100vw, 1250px'/>
-        <div className="absolute inset-0 transition-all duration-300 group-hover/hero:backdrop-blur-sm z-10" />
-        <div className="absolute inset-0 bg-black/30 flex flex-col justify-between items-center md:py-8 py-5 px-4 text-center z-20">
-            <div className="text-white text-4xl drop-shadow-lg">
-                <h1>Des cocktails sur-mesure pour vos évènements</h1>
-            </div>
-            <div ref={refImg} className="flex flex-row gap-5">
+    <div
+      className="relative h-[85vh] md:h-[90vh] overflow-hidden"
+      onMouseEnter={() => setShowImages(true)}
+      onMouseLeave={() => setShowImages(false)}
+    >
+      <Image
+        src={imageBar}
+        alt="Bar à cocktails"
+        fill
+        priority
+        quality={75}
+        className="object-cover"
+        sizes="(max-width: 1250px) 100vw, 1250px"
+      />
+
+      <div className="absolute inset-0 bg-black/30 z-10" />
+
+      <div className="absolute inset-0 z-20 flex flex-col justify-between items-center md:py-8 py-5 px-4 text-center">
+        <h1
+          className={`${garamond.className} text-white text-4xl md:text-5xl font-bold leading-tight min-h-[5rem]`}
+          style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}
+        >
+          Des cocktails sur-mesure pour vos évènements
+        </h1>
+
+        <div className="flex flex-row gap-5 h-[350px] md:h-[350px] max-md:h-[250px]">
+          {[imgCocktailBlue, imgCocktailYellow, imgCocktailRed].map((img, idx) => (
+            <div
+              key={idx}
+              className={`relative w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px] border-4 border-[#88592F] transform transition-all duration-300 ease-out ${
+                showImages ? "opacity-100 visible" : "opacity-0 invisible"
+              } ${
+                idx === 0 ? "-rotate-15" : idx === 2 ? "rotate-15" : ""
+              } hover:scale-110 hover:cursor-pointer`}
+            >
               <Image
-                src={imgCocktailBlue}
-                alt="Cocktail bleu création"
+                src={img}
+                alt={`Cocktail ${idx}`}
+                fill
                 quality={75}
-                className={`
-                  border-4 border-[#88592F] object-cover
-                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
-                  hover:cursor-pointer hover:scale-110 transition-all -rotate-15 duration-300 ease-out
-                  ${showImages ? "opacity-100" : "opacity-0"}
-                `}
-              />
-              <Image
-                src={imgCocktailYellow}
-                alt="Cocktail jaune création"
-                quality={75}
-                className={`
-                  border-4 border-[#88592F] object-cover
-                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
-                  hover:cursor-pointer hover:scale-110 transition-all ease-out duration-300
-                  ${showImages ? "opacity-100 delay-100" : "opacity-0"}
-                `}
-              />
-              <Image
-                src={imgCocktailRed}
-                alt="Cocktail rouge création"
-                quality={75}
-                className={`
-                  border-4 border-[#88592F] object-cover
-                  w-[250px] h-[350px] max-md:w-[180px] max-md:h-[250px]
-                  hover:cursor-pointer hover:scale-110 transition-all rotate-15 ease-out duration-300
-                  ${showImages ? "opacity-100 delay-200" : "opacity-0"}
-                `}
+                loading="lazy"
+                className="object-cover"
               />
             </div>
-            <div>
-                <BtnReservation />
-            </div>
+          ))}
         </div>
+
+        <div>
+          <BtnReservation />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default HeroSection;
-

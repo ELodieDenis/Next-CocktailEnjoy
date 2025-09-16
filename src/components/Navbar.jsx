@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import BtnReservation from "./BtnReservation";
 import Image from "next/image";
 import Link from "next/link";
-
+import IconMenu from "@/public/icons/icon_menu.svg"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [stateItem, setStateItem] = useState("")
@@ -58,7 +58,7 @@ const Navbar = () => {
         <BtnReservation className="hidden lg:flex" />
 
         <button onClick={toggleMenu} className="lg:hidden focus:outline-none" aria-label="Ouvrir ou fermer le menu" aria-expanded={isMenuOpen} aria-controls="mobile-menu">
-            <img src="/icons/icon_menu.svg" alt="Icône menu" className="w-6 h-6 hover:cursor-pointer" width="24" height="24"/>
+            <Image src={IconMenu} alt="Icône menu" className="w-6 h-6 hover:cursor-pointer" width={24} height={24}/>
         </button>
       </div>
     </header>

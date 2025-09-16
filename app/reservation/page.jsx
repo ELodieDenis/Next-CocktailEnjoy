@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
-import FromContact from '@/src/components/compContact/FromContact';
+import Contact from '@/src/components/compContact/Contact';
 
 const page = () => {
     return (
         <>
             <div className='bg-zinc-900'>
                 <Navbar />
-                <FromContact />
+                <Contact />
                 <Footer />
             </div>
         </>

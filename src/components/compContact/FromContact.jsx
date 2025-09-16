@@ -1,9 +1,10 @@
 "use client"
 
 import React from "react";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { createPortal } from "react-dom";
-import Modal from "./Modal";
+
+const Modal = React.lazy(() => import ("./Modal"))
 
 const ContactForm = () => {
     const [name, setName] = useState("")
@@ -13,16 +14,13 @@ const ContactForm = () => {
     const [message, setMessage] = useState("")
     const [modal, setModal] = useState(false)
 
-    const handleSubmit = (e) => {
+    const handleModal = (e) => {
         e.preventDefault()
-    }
-
-    const handleModal = () => {
-        if(!name | !username | !email | !message) {
-            setModal(false)
-        } else {
-            setModal(true)
-        }
+        // if(!name || !username || !email || !message) {
+        //     setModal(false)
+        // } else {
+        //     setModal(true)
+        // }
     }
 
 
@@ -32,7 +30,7 @@ const ContactForm = () => {
                 Formulaire de contact
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-zinc-800 rounded-sm border-b-2">
                         <input
@@ -66,7 +64,7 @@ const ContactForm = () => {
                     />
                 </div>
                 <div className="bg-zinc-800 rounded-sm border-b-2">
-                    <select name="object" className="w-full px-3 py-2 bg-transparent outline-none">
+                    <select value={object} onChange={(e) => setObject(e.target.value)} name="object" className="w-full px-3 py-2 bg-transparent outline-none">
                         <option value="select" className="bg-zinc-800 text-white">Objet...</option>
                         <option value="rendezVous" id="1" className="bg-zinc-800 text-white">Prendre un rendez-vous</option>
                         <option value="renseignement" id="2" className="bg-zinc-800 text-white">Renseignement sur une prestation</option>
@@ -94,13 +92,15 @@ const ContactForm = () => {
 
             {modal && 
                 createPortal(
-                    <Modal 
-                        closeModal={() => setModal(false)}
-                        name={name}
-                        username={username}
-                        email={email}
-                        message={message}
-                    />, 
+                    <Suspense fallback={<div>Chargement...</div>}>
+                        <Modal 
+                            closeModal={() => setModal(false)}
+                            name={name}
+                            username={username}
+                            email={email}
+                            message={message}
+                        />
+                    </Suspense>, 
                     document.body
                 )
             }
