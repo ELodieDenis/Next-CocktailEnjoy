@@ -16,11 +16,6 @@ const ContactForm = () => {
 
     const handleModal = (e) => {
         e.preventDefault()
-        // if(!name || !username || !email || !message) {
-        //     setModal(false)
-        // } else {
-        //     setModal(true)
-        // }
     }
 
 
@@ -31,7 +26,7 @@ const ContactForm = () => {
             </h2>
 
             <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     <div className="bg-zinc-800 rounded-sm border-b-2">
                         <input
                             value={name}
